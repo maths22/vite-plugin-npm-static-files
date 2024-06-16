@@ -46,11 +46,11 @@ function ServeNpmAssetsPlugin(staticNpmFiles: Record<string, string>): Plugin {
   }
 }
 
-function npmStaticFilePlugin(staticNpmFiles: Record<string, string>): Plugin[] {
+function npmStaticFilesPlugin(staticNpmFiles: Record<string, string>): Plugin[] {
   return [
     CopyNpmAssetsPlugin(staticNpmFiles),
     ServeNpmAssetsPlugin(staticNpmFiles)
   ]
 }
 
-export default npmStaticFilePlugin;
+export default npmStaticFilesPlugin;

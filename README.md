@@ -18,11 +18,11 @@ In your `vite.config.ts`, add the plugin with an object mapping file names to pa
 
 ```ts
 import { defineConfig } from "vite";
-import npmStaticFilePlugin from "../src/index";
+import npmStaticFilesPlugin from "vite-plugin-npm-static-files";
 
 export default defineConfig({
 	plugins: [
-		npmStaticFilePlugin({
+		npmStaticFilesPlugin({
       'jquery.js': 'jquery/dist/jquery.min.js',
     })
 	],
