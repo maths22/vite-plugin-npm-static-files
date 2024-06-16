@@ -1,0 +1,43 @@
+{
+  "name": "vite-plugin-npm-static-files",
+  "version": "0.1.0",
+  "description": "Vite plugin to serve raw files from NPM as static assets",
+  "type": "module",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "dev": "vite demo",
+    "dev:build": "vite build demo",
+    "build": "rimraf dist && tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "vite",
+    "vite-preset"
+  ],
+  "author": "Jacob Burroughs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maths22/vite-plugin-npm-static-files"
+  },
+  "files": [
+    "dist/"
+  ],
+  "peerDependencies": {
+    "vite": "5.x"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.4.5",
+    "vite": "^5.3.1"
+  }
+}
