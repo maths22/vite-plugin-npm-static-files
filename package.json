@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-npm-static-files",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Vite plugin to serve raw files from NPM as static assets",
   "type": "module",
   "module": "./dist/index.js",
@@ -32,7 +32,7 @@
     "dist/"
   ],
   "peerDependencies": {
-    "vite": "5.x"
+    "vite": "^5.0 || ^6.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
