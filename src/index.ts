@@ -18,6 +18,7 @@ function CopyNpmAssetsPlugin(staticNpmFiles: Record<string, string>): Plugin {
       for (const [dest, src] of Object.entries(staticNpmFiles || {})) {
         this.emitFile({
           name: `npm/${dest}`,
+          originalFileName: `npm/${dest}`,
           type: 'asset',
           source: await readNpmFile(this, src)
         })
