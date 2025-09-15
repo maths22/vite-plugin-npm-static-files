@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-npm-static-files",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Vite plugin to serve raw files from NPM as static assets",
   "type": "module",
   "module": "./dist/index.js",

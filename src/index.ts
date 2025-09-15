@@ -7,7 +7,7 @@ async function readNpmFile(context: Rollup.PluginContext, path: string) {
     throw new Error(`Could not find ${path}`)
   }
   const fsPath = resolveInfo.id.replace('?url', '')
-  return readFileSync(fsPath, 'binary')
+  return readFileSync(fsPath)
 }
 
 function CopyNpmAssetsPlugin(staticNpmFiles: Record<string, string>): Plugin {
@@ -40,8 +40,8 @@ function ServeNpmAssetsPlugin(staticNpmFiles: Record<string, string>): Plugin {
     load: async function (id) {
       if(staticNpmFiles && id.startsWith('\0npm:')) {
         const src = staticNpmFiles[id.split(':')[1]]
-
-        return await readNpmFile(this, src)
+        const contents = await readNpmFile(this, src)
+        return contents.toString('utf8')
       }
     },
   }
